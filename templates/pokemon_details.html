@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Desk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/pokeball.png') }}" title="Poke Desk">
+</head>
+<body>
+    <div class="pokemon-details">
+        <h1 class="h1">Detalles de {{ name.capitalize() }}</h1>
+        <div class="details-container">
+            <div class="abilities">
+                <h2 class="h2">Habilidades:</h2>
+                <ul>
+                    {% for ability in abilities %}
+                        <li>{{ ability.ability.name.capitalize() }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="pokemon-image">
+                <img src="{{ image_url }}" alt="{{ name }}">
+            </div>
+        </div>
+    </div>
+    <div class="links">
+        <a href="/" class="ahome_link">Regresar a los Pokemones</a>
+        <a href="{{ url_for('logout') }}" class="ahome_link">Cerrar sesión</a>
+    </div>
+</body>
+</html>

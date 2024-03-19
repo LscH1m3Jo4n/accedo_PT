@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Desk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/pokeball.png') }}" title="Poke Desk">
+</head>
+<body>
+    <h1 class="h1">Pokemon Desk</h1>
+    <div class="table-container">
+        <table>
+            <tbody>
+                {% for pokemon in api_data.results %}
+                    {% if loop.index0 % 4 == 0 %}
+                        <tr>
+                    {% endif %}
+                    <td><a href="/pokemon/{{ pokemon.name }}">{{ pokemon.name.capitalize() }}</a></td>
+                    {% if loop.index0 % 4 == 3 or loop.last %}
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

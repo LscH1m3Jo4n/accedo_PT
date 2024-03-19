@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Monserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+.container {
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.input-group {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 12px;
+}
+
+.email, .password, .username {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.bottom {
+    font-family: 'Montserrat', sans-serif;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.links{
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ahome_link {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+}
+.table-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.h1{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 15%;
+}
+.table-container table {
+    width: 100%;
+    margin-top: 70px;
+}
+
+.table-container td {
+    width: 25%;
+    padding: 10px;
+    text-align: center;
+}
+.table-container a{
+    text-decoration: none;
+    color: black;
+}
+.pokemon-details {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #867e7e;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.h2{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 15%;
+}
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.abilities, .pokemon-image {
+    width: 45%;
+}
+.abilities ul {
+    margin-top: 10px;
+    font-family: 'Monserrat', sans-serif;
+    list-style-type: none;
+    padding: 0;
+}
+.abilities ul li {
+    margin-bottom: 5px;
+}
+.pokemon-image img {
+    max-width: 100%;
+}
+.a{
+    text-decoration: none;
+}

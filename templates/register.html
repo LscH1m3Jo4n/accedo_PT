@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokemon Desk</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/pokeball.png') }}" title="Poke Desk">
+    </head>
+<body>
+    <div class="container">
+        <form method="post" action="/register">
+            <div class="input-group">
+                <label for="username" class="label">Nombre de usuario</label>
+                <input class="username" type="text" name="username" value="" placeholder="Nombre de usuario" required>
+            </div>
+            <div class="input-group">
+                <label for="email" class="label">Ingrese su correo electrónico</label>
+                <input class="email" type="text" name="email" value="" placeholder="Correo electrónico" required>
+            </div>
+            <div class="input-group">
+                <label for="password" class="label">Ingrese su contraseña</label>
+                <input class="password" type="password" name="password" value="" placeholder="Contraseña" required>
+            </div>
+            <div class="input-group">
+                <label for="password" class="label">Ingrese nuevamente su contraseña</label>
+                <input class="password" type="password" name="password" value="" placeholder="Contraseña" required>
+            </div>
+            <input class="bottom" type="submit" value="Enviar">
+        </form>
+        <div class="links">
+            <a href="/" class="ahome_link">Regresar al menú principal</a>
+        </div>
+    </div>
+</body>
+</html>
