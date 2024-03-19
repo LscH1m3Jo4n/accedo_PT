@@ -70,9 +70,13 @@ body{
 }
 
 .table-container td {
+    font-family: 'Montserrat',sans-serif;
     width: 25%;
     padding: 10px;
     text-align: center;
+}
+.table-container td:hover{
+    background-color: #8de4d8c9;
 }
 .table-container a{
     text-decoration: none;

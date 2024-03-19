@@ -63,8 +63,9 @@ def fetch_pokemon_details(name):
 
 @app.route('/')
 def index():
-    api_data = fetch_api_data()  
-    return render_template('index.html', api_data=api_data)
+    api_data = fetch_api_data()
+    first_pokemon_name = api_data['results'][0]['name']
+    return render_template('index.html', api_data=api_data, pokemon_name=first_pokemon_name)
 #Definicion de la ruta del archivo index.html, y la renderizacion de la API
 
 @app.route('/pokemon/<name>')
@@ -73,7 +74,7 @@ def pokemon_details(name):
     api_data = fetch_pokemon_details(name)
     abilities = api_data['abilities']
     image_url = api_data['sprites']['front_default']
-    return render_template('pokemon_details.html', name=name, abilities=abilities, image_url=image_url)
+    return render_template('pokemon_details.html', pokemon_name=name, name=name, abilities=abilities, image_url=image_url)
 #Definicion de la variable con la que se extrae el nombre, habilidades, etc, de los pokemones, con un decorador que verifica si el usuario esta o no logueado
 
 @app.errorhandler(401)
@@ -89,7 +90,11 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and user.password == password:
             login_user(user)
-            return redirect(url_for('pokemon_details', name='charmander'))
+            pokemon_name = request.args.get('pokemon_name')
+            if pokemon_name:
+                return redirect(url_for('pokemon_details', name=pokemon_name))
+            else:
+                return redirect(url_for('index'))
         else:
             error_message = "Credenciales incorrectas. Por favor, inténtalo de nuevo."
             return render_template('login.html', error=error_message)
